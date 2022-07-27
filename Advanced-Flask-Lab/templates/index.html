@@ -13,12 +13,13 @@
 
 				<!-- Header -->
 					<header id="header">
-						<span class="avatar"><img src="{{url_for('static',filename='images/avatar.jpg')}}" alt="" /></span>
+						<span class="avatar"><img src="https://scontent.ftlv21-1.fna.fbcdn.net/v/t31.18172-1/1502644_10152506946962507_2442851309927378964_o.png?stp=c49.0.148.148a_dst-png_p148x148&_nc_cat=111&ccb=1-7&_nc_sid=1eb0c7&_nc_ohc=d-R_wjIm2d8AX_NugPv&_nc_ht=scontent.ftlv21-1.fna&oh=00_AT8CSjiG8-biys_qQ9tU-yrxzJSp6HANxsz5c3mFVk-G2Q&oe=62FD0A1B")
+ alt="" /></span>
 
-            <h1>Description</h1>
+            <h1> {{user_bio}} </h1>
             <br>
             <!-- About me button -->
-            <a href="#"><button style="color:white;width:40%" >More about me</button></a>
+            <button onclick="window.location.href='{{ url_for('about') }}';" style="color:white;width:40%" >More about me</button>
             <!--  -->
             <br> <br>
 						<ul class="icons">
@@ -35,24 +36,16 @@
 
 						<!-- Thumbnails -->
 							<section class="thumbnails">
-                
+                {% for post in posts %}
+                	<li> 
+                		
+                        <img src={{post}} alt="" style="width: 400px" />
+                        <h3>Caption... blah blah blah</h3>
+                      
+                	</li>
+                {% endfor %}
+
                 <div>
-                      <a href="">
-                        <img src="static/images/thumbs/01.jpg" alt="" />
-                        <h3>Caption... blah blah blah</h3>
-                      </a>
-                
-                      <a href="">
-                        <img src="url_for('static',filename='images/thumbs/02.jpg')" alt="" />
-                        <h3>Caption... blah blah blah</h3>
-                      </a>
-                </div>    
-                <div>
-                  <a href="">
-                        <img src="{{url_for('static',filename='images/thumbs/03.jpg')}}" alt="" />
-                        <h3>Caption... blah blah blah</h3>
-                      </a>
-                </div>  
 
 							</section>
 
